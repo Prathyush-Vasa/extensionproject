@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 80px;
+      resize: vertical;
+    }
+    .date-group {
+      display: flex;
+      gap: 10px;
+    }
+    .date-group input {
+      flex: 1;
+    }
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .btn-danger {
+      background-color: #dc3545;
+    }
+    .btn-danger:hover {
+      background-color: #c82333;
+    }
+    .work-history-list {
+      max-height: 200px;
+      overflow-y: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 10px;
+      margin-top: 15px;
+    }
+    .work-entry {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+    .work-entry:last-child {
+      border-bottom: none;
+    }
+    .work-entry h4 {
+      margin: 0 0 5px 0;
+      color: #333;
+    }
+    .work-entry p {
+      margin: 5px 0;
+      font-size: 12px;
+      color: #666;
+    }
+    .auto-fill-btn {
+      background-color: #28a745;
+      width: 100%;
+      margin-top: 15px;
+    }
+    .auto-fill-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>Workday Work History Auto-Fill</h2>
+    <p>Manage your work history for automatic form filling</p>
+  </div>
+
+  <form id="workHistoryForm">
+    <div class="form-group">
+      <label for="jobTitle">Job Title:</label>
+      <input type="text" id="jobTitle" required>
+    </div>
+
+    <div class="form-group">
+      <label for="company">Company:</label>
+      <input type="text" id="company" required>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location:</label>
+      <input type="text" id="location">
+    </div>
+
+    <div class="form-group">
+      <label>Employment Period:</label>
+      <div class="date-group">
+        <input type="date" id="startDate" required>
+        <input type="date" id="endDate">
+      </div>
+      <label>
+        <input type="checkbox" id="currentJob"> Currently working here
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Job Description:</label>
+      <textarea id="description" placeholder="Describe your responsibilities and achievements..."></textarea>
+    </div>
+
+    <button type="submit" class="btn">Add Work History</button>
+    <button type="button" class="btn btn-danger" id="clearAll">Clear All</button>
+  </form>
+
+  <div class="work-history-list" id="workHistoryList">
+    <p style="text-align: center; color: #999;">No work history entries yet</p>
+  </div>
+
+  <button class="btn auto-fill-btn" id="autoFillBtn">Auto-Fill Current Page</button>
+
+  <script src="popup.js"></script>
+</body>
+</html> 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workday Job Application Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 800px; margin: 0 auto; }
+        .form-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        label { display: block; margin: 10px 0 5px 0; font-weight: bold; }
+        input, textarea { width: 100%; padding: 8px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        textarea { height: 100px; resize: vertical; }
+        .test-info { background: #f0f8ff; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .work-history-section { background: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h1>Workday Job Application Test Page</h1>
+    
+    <div class="test-info">
+        <h3>Testing Instructions:</h3>
+        <ol>
+            <li>Load your extension in Chrome/Edge</li>
+            <li>Click the extension icon and add some work history</li>
+            <li>Come back to this page and click "Auto-Fill Current Page"</li>
+            <li>The form fields below should be automatically filled</li>
+        </ol>
+    </div>
+
+    <form>
+        <div class="form-section work-history-section">
+            <h2>Work History Section</h2>
+            
+            <div class="work-entry">
+                <label for="jobTitle1">Job Title:</label>
+                <input type="text" id="jobTitle1" name="jobTitle" placeholder="Enter job title">
+                
+                <label for="company1">Company:</label>
+                <input type="text" id="company1" name="company" placeholder="Enter company name">
+                
+                <label for="location1">Location:</label>
+                <input type="text" id="location1" name="location" placeholder="Enter location">
+                
+                <label for="startDate1">Start Date:</label>
+                <input type="date" id="startDate1" name="startDate">
+                
+                <label for="endDate1">End Date:</label>
+                <input type="date" id="endDate1" name="endDate">
+                
+                <label for="description1">Job Description:</label>
+                <textarea id="description1" name="description" placeholder="Describe your responsibilities and achievements..."></textarea>
+            </div>
+            
+            <div class="work-entry">
+                <label for="jobTitle2">Job Title:</label>
+                <input type="text" id="jobTitle2" name="jobTitle" placeholder="Enter job title">
+                
+                <label for="company2">Company:</label>
+                <input type="text" id="company2" name="company" placeholder="Enter company name">
+                
+                <label for="location2">Location:</label>
+                <input type="text" id="location2" name="location" placeholder="Enter location">
+                
+                <label for="startDate2">Start Date:</label>
+                <input type="date" id="startDate2" name="startDate">
+                
+                <label for="endDate2">End Date:</label>
+                <input type="date" id="endDate2" name="endDate">
+                
+                <label for="description2">Job Description:</label>
+                <textarea id="description2" name="description" placeholder="Describe your responsibilities and achievements..."></textarea>
+            </div>
+        </div>
+        
+        <div class="form-section">
+            <h2>Other Information</h2>
+            <label for="otherField">Other Field (should not be filled):</label>
+            <input type="text" id="otherField" name="otherField" placeholder="This field should remain empty">
+        </div>
+    </form>
+    
+    <div class="test-info">
+        <h3>Expected Results:</h3>
+        <ul>
+            <li>✅ Job title fields should be filled with your work history</li>
+            <li>✅ Company fields should be filled</li>
+            <li>✅ Location fields should be filled</li>
+            <li>✅ Start and end dates should be filled</li>
+            <li>✅ Job descriptions should be filled</li>
+            <li>❌ "Other Field" should remain empty</li>
+        </ul>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Workday Work History Auto-Fill",
+  "version": "1.0",
+  "description": "Automatically fills work history section in Workday job applications",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://*.workday.com/*",
+    "https://*.myworkdayjobs.com/*",
+    "http://localhost/*",
+    "file://*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Workday Work History Auto-Fill"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.workday.com/*",
+        "https://*.myworkdayjobs.com/*",
+        "http://localhost/*",
+        "file://*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+} 
